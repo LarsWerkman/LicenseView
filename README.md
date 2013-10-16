@@ -68,11 +68,17 @@ This is a sample file how it should be structured.
 </licenses>
 ```
 
-The root tag should always be called ```xml<licenses>``` and the child tag ```xml<license>``` .
-The license tag has 2 attributes ```xml name``` and ```xml<type>```.
+The root tag should always be called ```xml
+<licenses>``` and the child tag ```xml
+<license>``` .
+The license tag has 2 attributes ```xml
+name``` and ```xml
+type```.
 
 The name specifies the name of the library.
-The type attribute can be 2 things, either ```xml file``` or ```xml library``` depending if its a jar or a project.
+The type attribute can be 2 things, either ```xml
+file``` or ```xml
+library``` depending if its a jar or a project.
 
 
 <H2>License</H2>
