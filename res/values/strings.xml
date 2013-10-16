@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <string name="software">Notices for software:</string>
+    <string name="file">Notices for file:</string>
+    <string name="bullet">&#9679; \t</string>
+
+</resources>

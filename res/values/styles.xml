@@ -1,0 +1,43 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+    
+    <style name="License"/>
+    
+    <style name="License.Container">
+        <item name="android:padding">@dimen/container_padding</item>
+    </style>
+    
+    <style name="License.Title">
+        <item name="android:textSize">@dimen/title_textsize</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    
+    <style name="License.Name">
+        <item name="android:textSize">@dimen/name_textsize</item>
+        <item name="android:padding">@dimen/text_padding</item>
+    </style>
+    
+    <style name="License.License">
+        <item name="android:textAppearance">?android:attr/textAppearanceSmall</item>
+        <item name="android:typeface">monospace</item>
+        <item name="android:padding">@dimen/text_padding</item>
+        <item name="android:background">@color/light_gray</item>
+    </style>
+        
+</resources>
