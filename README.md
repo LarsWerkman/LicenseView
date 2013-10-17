@@ -9,8 +9,6 @@ The only solutions I could find on the internet they used Webviews. I didn't wan
 
 <h2>Documentation</h2>
 
-<br>
-
 To add the LicenseView to a layout.
 ```xml
 <com.larswerkman.licenseview.LicenseView
@@ -68,17 +66,11 @@ This is a sample file how it should be structured.
 </licenses>
 ```
 
-The root tag should always be called ```xml
-<licenses>``` and the child tag ```xml
-<license>``` .
-The license tag has 2 attributes ```xml
-name``` and ```xml
-type```.
+The root tag should always be called ```<licenses>``` and the child tag ```<license>``` .
+The license tag has 2 attributes ```name``` and ```type```.
 
 The name specifies the name of the library.
-The type attribute can be 2 things, either ```xml
-file``` or ```xml
-library``` depending if its a jar or a project.
+The type attribute can be 2 things, either ```file``` or ```library``` depending if its a jar or a project.
 
 
 <H2>License</H2>
