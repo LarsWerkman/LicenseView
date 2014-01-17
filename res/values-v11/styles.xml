@@ -10,14 +10,12 @@
         <item name="android:textSize">@dimen/title_textsize</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textIsSelectable">true</item>
-        <item name="android:textColor">@android:color/black</item>
     </style>
     
     <style name="License.Name">
         <item name="android:textSize">@dimen/name_textsize</item>
         <item name="android:padding">@dimen/text_padding</item>
         <item name="android:textIsSelectable">true</item>
-        <item name="android:textColor">@android:color/black</item>
     </style>
     
     <style name="License.License">
