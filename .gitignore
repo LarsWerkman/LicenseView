@@ -23,7 +23,10 @@ proguard-project.txt
 local.properties
 sample/src/com/cyrilmottier/android/polarissample/util/LocalConfig.java
 
+#gradle
 build
 .gradle
-
+gradle
+gradlew
+gradlew.bat
 signing.properties
