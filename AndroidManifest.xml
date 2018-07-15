@@ -3,8 +3,5 @@
     android:versionCode="11"
     android:versionName="1.1" >
 
-    <uses-sdk
-        android:minSdkVersion="1"
-        android:targetSdkVersion="18" />
 
 </manifest>

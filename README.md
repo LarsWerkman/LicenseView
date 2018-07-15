@@ -72,6 +72,12 @@ The license tag has 2 attributes ```name``` and ```type```.
 The name specifies the name of the library.
 The type attribute can be 2 things, either ```file``` or ```library``` depending if its a jar or a project.
 
+Additionally you can manually add licenses at runtime for services that require dynamic retrieval of a current license.
+
+```java
+License l = new License("Library Name", License.TYPE_LIBRARY, "Dynamic License text");
+licenseView.appendLicense(l);
+```	
 
 <H2>License</H2>
 	

@@ -31,58 +31,58 @@ import android.widget.TextView;
 
 public class LicenseView extends ScrollView {
 
-	LinearLayout mContainer;
+    LinearLayout mContainer;
+    LayoutInflater mInflater;
 
-	public LicenseView(Context context) {
-		super(context);
-		init();
-	}
+    public LicenseView(Context context) {
+        super(context);
+        init();
+    }
 
-	public LicenseView(Context context, AttributeSet attrs) {
-		super(context, attrs);
-		init();
-	}
+    public LicenseView(Context context, AttributeSet attrs) {
+        super(context, attrs);
+        init();
+    }
 
-	public LicenseView(Context context, AttributeSet attrs, int defStyle) {
-		super(context, attrs, defStyle);
-		init();
-	}
+    public LicenseView(Context context, AttributeSet attrs, int defStyle) {
+        super(context, attrs, defStyle);
+        init();
+    }
 
-	private void init() {
-		mContainer = new LinearLayout(getContext());
-		mContainer.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT,
-				LayoutParams.MATCH_PARENT));
-		mContainer.setOrientation(LinearLayout.VERTICAL);
-		addView(mContainer);
-	}
+    private void init() {
+        mContainer = new LinearLayout(getContext());
+        mContainer.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT,
+                LayoutParams.MATCH_PARENT));
+        mContainer.setOrientation(LinearLayout.VERTICAL);
+        addView(mContainer);
+    }
 
-	public void setLicenses(int id) throws NotFoundException,
-			XmlPullParserException, IOException {
-		List<License> licenses = ParseLicenseXml.Parse(getResources()
-				.getXml(id));
-		LayoutInflater inflater = (LayoutInflater) getContext()
-				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+    public void setLicenses(int id) throws NotFoundException,
+            XmlPullParserException, IOException {
+        List<License> licenses = ParseLicenseXml.Parse(getResources()
+                .getXml(id));
 
-		View child;
-		TextView title;
-		TextView name;
-		TextView license;
+        for (License l : licenses) {
+            appendLicense(l);
+        }
+    }
 
-		for (License l : licenses) {
-			child = inflater.inflate(R.layout.license_layout, null);
-			title = (TextView) child.findViewById(R.id.license_title);
-			name = (TextView) child.findViewById(R.id.license_name);
-			license = (TextView) child.findViewById(R.id.license_license);
+    public void appendLicense(License l) {
+        if (mInflater == null) mInflater = (LayoutInflater) getContext()
+                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-			title.setText(getContext().getResources().getString(
-					l.getType() == License.TYPE_FILE ? R.string.file
-							: R.string.software));
-			name.setText(getContext().getResources().getString(R.string.bullet)
-					+ l.getName());
-			license.setText(l.getLicense());
-			mContainer.addView(child);
-		}
+        View child = mInflater.inflate(R.layout.license_layout, null);
+        TextView title = (TextView) child.findViewById(R.id.license_title);
+        TextView name = (TextView) child.findViewById(R.id.license_name);
+        TextView license = (TextView) child.findViewById(R.id.license_license);
 
-	}
+        title.setText(getContext().getResources().getString(
+                l.getType() == License.TYPE_FILE ? R.string.file
+                        : R.string.software));
+        name.setText(getContext().getResources().getString(R.string.bullet)
+                + l.getName());
+        license.setText(l.getLicense());
+        mContainer.addView(child);
+    }
 
 }
